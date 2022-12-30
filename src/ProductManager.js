@@ -22,17 +22,18 @@ class ProductManager{
         const data = JSON.parse(fileRead);
         const dataLength = data.length + 1
 
-        const {title, description, price, thumbnail, code, stock} = productObject;
+        const {title, description, price, thumbnail, code, stock, status, category} = productObject;
         const newProduct = {
             title: title ?? "",
             description: description ?? "",
             price: price ?? "",
-            thumbnail: thumbnail,
+            thumbnail: thumbnail ?? [],
             code: code?? "",
             stock: stock ?? "",
-            id: dataLength
+            id: dataLength,
+            status: status ?? "",
+            category: category ?? ""
             }
-
         const validationArray = Object.values(newProduct)
         const emptyParam = validationArray.some(producto => producto === "")
 

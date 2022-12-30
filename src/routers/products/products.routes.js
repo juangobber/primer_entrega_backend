@@ -6,8 +6,8 @@ const productManagment = require('../../ProductManager')
 const productos = new productManagment('./listadoProductos.json')
 
 router.get('/', async (req, res) => {
+    
     try{
-
         const products = await productos.getProducts()
         
         if (req.query.limit){
